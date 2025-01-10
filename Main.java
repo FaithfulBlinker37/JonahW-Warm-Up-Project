@@ -1,26 +1,26 @@
-public class TotalSum {
+public class Main {
     public static void main(String[] args) {
         System.out.println(totalSum(2000000));
 
     }
 
     public static double totalSum(int limit) {
-        boolean[] isPrime = new boolean[limit];
+        boolean[] primeNumber = new boolean[limit];
         for (int i = 2; i < limit; i++) {
-            isPrime[i] = true;
+            primeNumber[i] = true;
 
         }
 
         for (int i = 2; i * i < limit; i++) {
-            if (isPrime[i]) {
+            if (primeNumber[i]) {
                 for (int j = i * i; j < limit; j += i) {
-                    isPrime[j] = false;
+                    primeNumber[j] = false;
                 }
             }
         }
         double sum = 0;
         for (int i = 2; i < limit; i++) {
-            if (isPrime[i]) {
+            if (primeNumber[i]) {
                 sum += i;
             }
         }

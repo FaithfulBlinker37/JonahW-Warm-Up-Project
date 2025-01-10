@@ -4,7 +4,7 @@ public class Main {
 
     }
 
-    public static double totalSum(int limit) {
+    public static long totalSum(int limit) {
         boolean[] primeNumber = new boolean[limit];
         for (int i = 2; i < limit; i++) {
             primeNumber[i] = true;
@@ -18,7 +18,7 @@ public class Main {
                 }
             }
         }
-        double sum = 0;
+        long sum = 0;
         for (int i = 2; i < limit; i++) {
             if (primeNumber[i]) {
                 sum += i;
